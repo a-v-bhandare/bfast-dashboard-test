@@ -12,4 +12,7 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  build: {
+    outDir: 'public',  // Specifies the output directory for the build files
+  },
 });

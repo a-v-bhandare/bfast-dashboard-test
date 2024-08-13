@@ -18,12 +18,11 @@ export default function App() {
         <ScrollToTop />
         <Header />
         <Routes>
-          <Route element={<ProtectedRoute />}>
-            <Route path="/" element={<Home />} />
-          </Route>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/" element={<Home />} />
+            </Route>
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
-
           <Route element={<PrivateRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>

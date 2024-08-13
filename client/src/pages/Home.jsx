@@ -76,7 +76,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div id="home">
       <div className="flex flex-col justify-between p-24">
         <div className="flex flex-row max-sm:flex-col justify-between">
           <h1 className="text-2xl text-[#2D286A] font-poppins font-bold">

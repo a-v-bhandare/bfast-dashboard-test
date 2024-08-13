@@ -8,6 +8,7 @@ import {
   signInFailure,
 } from "../redux/user/userSlice";
 import OAuth from "../components/OAuth";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -16,6 +17,7 @@ export default function SignIn() {
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { signIn } = useAuth();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -44,6 +46,7 @@ export default function SignIn() {
 
       if (res.ok) {
         dispatch(signInSuccess(data));
+        signIn();
         navigate("/");
       }
       // if (res.ok) {
